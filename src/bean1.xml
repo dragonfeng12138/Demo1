@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--1. 配置User对象创建-->
+<!--    <bean id="user" class="com.dragon.spring5.User"></bean>-->
+
+    <!--2.set方法注入属性-->
+<!--    <bean id="book" class="com.dragon.spring5.Book">-->
+<!--    &lt;!&ndash;使用property完成注入-->
+<!--        name:属性名-->
+<!--        value:属性值-->
+<!--        &ndash;&gt;-->
+<!--        <property name="name" value="易筋经"></property>-->
+<!--        <property name="author" value="达摩老祖"></property>-->
+<!--    </bean>-->
+
+<!--&lt;!&ndash;3.有参构造注入属性    &ndash;&gt;-->
+<!--    <bean id="orders" class="com.dragon.spring5.Orders">-->
+<!--        <constructor-arg name="name" value="电脑"></constructor-arg>-->
+<!--        <constructor-arg name="address" value="China"></constructor-arg>-->
+<!--    </bean>-->
+
+
+<!--&lt;!&ndash;    4.p空间注入属性&ndash;&gt;-->
+<!--        <bean id="book" class="com.dragon.spring5.Book" p:name="九阳神功" p:author="无名氏">-->
+
+<!--        </bean>-->
+
+    <!--5.注入null值-->
+<!--        <bean id="book" class="com.dragon.spring5.Book">-->
+<!--        &lt;!&ndash;使用property完成注入-->
+<!--            name:属性名-->
+<!--            value:属性值-->
+<!--            &ndash;&gt;-->
+<!--            <property name="name" value="易筋经"></property>-->
+<!--            <property name="author" value="达摩老祖"></property>-->
+<!--            <property name="address">-->
+<!--                <null/>-->
+<!--            </property>-->
+<!--        </bean>-->
+
+    <!--6.属性包含特殊符号
+        1.转义符号&lt;&gt
+        2.把带特殊符号的内容写到CDATA:<![CDATA[ $VALUE$ ]]>
+    -->
+            <bean id="book" class="com.dragon.spring5.Book">
+            <!--使用property完成注入
+                name:属性名
+                value:属性值
+                -->
+                <<property name="name" value="易筋经"></property>
+                <property name="author" value="达摩老祖"></property>
+                <property name="address">
+                    <value><![CDATA[<<南京>>]]></value>
+                </property>
+            </bean>
+
+</beans>
